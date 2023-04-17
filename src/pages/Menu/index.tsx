@@ -3,13 +3,13 @@ import { ReactComponent as Logo } from "assets/logo.svg";
 import SearchEngine from "./SearchEngine";
 import { useState } from "react";
 import Filters from "./Filters";
-import Sort from "./Sort";
+import Sort, { OptionsSort } from "./Sort";
 import Itens from './Itens';
 
 export default function Menu() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState<number | null>(null);
-  const [sort, setSort] = useState("");
+  const [sort, setSort] = useState<OptionsSort>("");
 
   return (
     <main>
@@ -28,7 +28,7 @@ export default function Menu() {
           <Filters filter={filter} setFilter={setFilter}/>
           <Sort sort={sort} setSort={setSort} />
         </div>
-        <Itens />
+        <Itens search={search} filter={filter} sort={sort}/>
       </section>
     </main>
   )

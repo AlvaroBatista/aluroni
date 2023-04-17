@@ -4,9 +4,11 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md';
 
+export type OptionsSort ='porcao' | 'qtd_pessoas' | 'preco' | ''
+
 interface SortProps { 
-  sort: string,
-  setSort: React.Dispatch<React.SetStateAction<string>>
+  sort: OptionsSort,
+  setSort: React.Dispatch<React.SetStateAction<OptionsSort>>
 }
 
 export default function Sort({
@@ -15,6 +17,7 @@ export default function Sort({
 }: SortProps) {
   const [open, setOpen] = useState(false);
   const nameSort = sort && options.find(option => option.value === sort)?.name;
+
   return (
     <button
       className={classNames({
@@ -31,7 +34,7 @@ export default function Sort({
         [styles['sort__options--active']]: open
       })}>
         {options.map(option => (
-          <div className={styles.sort__option} key={option.value} onClick={() => setSort(option.value)}>
+          <div className={styles.sort__option} key={option.value} onClick={() => setSort(option.value as OptionsSort)}>
             {option.name}
           </div>
         ))}
