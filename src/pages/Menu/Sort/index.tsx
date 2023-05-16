@@ -1,7 +1,7 @@
-import styles from "./Sort.module.scss";
-import options from "./options.json";
-import React, { useState } from "react";
-import classNames from "classnames";
+import styles from './Sort.module.scss';
+import options from './options.json';
+import React, { useState } from 'react';
+import classNames from 'classnames';
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md';
 
 export type OptionsSort ='porcao' | 'qtd_pessoas' | 'preco' | ''
@@ -22,12 +22,12 @@ export default function Sort({
     <button
       className={classNames({
         [styles.sort]: true,
-        [styles["sort--active"]]: sort !== ""
+        [styles['sort--active']]: sort !== ''
       })}
       onClick={() => setOpen(!open)}
       onBlur={() => setOpen(false)}
     >
-      <span>{nameSort || "Ordenar Por"}</span>
+      <span>{nameSort || 'Ordenar Por'}</span>
       {open ? <MdKeyboardArrowUp size={20} /> : <MdKeyboardArrowDown size={20} /> }
       <div className={classNames({
         [styles.sort__options]: true,
@@ -40,5 +40,5 @@ export default function Sort({
         ))}
       </div>
     </button>
-  )
+  );
 }

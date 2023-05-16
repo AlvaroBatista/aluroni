@@ -1,15 +1,15 @@
-import styles from "./Menu.module.scss";
-import { ReactComponent as Logo } from "assets/logo.svg";
-import SearchEngine from "./SearchEngine";
-import { useState } from "react";
-import Filters from "./Filters";
-import Sort, { OptionsSort } from "./Sort";
+import styles from './Menu.module.scss';
+import { ReactComponent as Logo } from 'assets/logo.svg';
+import SearchEngine from './SearchEngine';
+import { useState } from 'react';
+import Filters from './Filters';
+import Sort, { OptionsSort } from './Sort';
 import Itens from './Itens';
 
 export default function Menu() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   const [filter, setFilter] = useState<number | null>(null);
-  const [sort, setSort] = useState<OptionsSort>("");
+  const [sort, setSort] = useState<OptionsSort>('');
 
   return (
     <main>
@@ -31,5 +31,5 @@ export default function Menu() {
         <Itens search={search} filter={filter} sort={sort}/>
       </section>
     </main>
-  )
+  );
 }

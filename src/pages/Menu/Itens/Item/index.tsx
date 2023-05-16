@@ -18,12 +18,12 @@ export default function Item(props: ItemProps) {
           <p> {description} </p>
         </div>
         <div className={styles.item__tags}>
-        <div className={classNames({
+          <div className={classNames({
             [styles.item__type]: true,
             [styles[`item__type__${category.label.toLowerCase()}`]]: true
           })}>{category.label}</div>
           <div className={styles.item__portion}>{size}</div>
-          <div className={styles.item__qtdpeople}>serve {serving} pessoa{serving === 1 ? "" : "s"}</div>
+          <div className={styles.item__qtdpeople}>serve {serving} pessoa{serving === 1 ? '' : 's'}</div>
           <div className={styles.item__value}>R$ {price.toFixed(2)}</div>
         </div>
       </div>

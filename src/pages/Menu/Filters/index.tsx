@@ -1,5 +1,5 @@
-import classNames from "classnames";
-import filters from "./filters.json";
+import classNames from 'classnames';
+import filters from './filters.json';
 import styles from './Filters.module.scss';
 
 type IOption = typeof filters[0];
@@ -20,7 +20,7 @@ export default function Filters({ filter, setFilter }: FiltersProps) {
     <div className={styles.filters}>
       {filters.map(option => (
         <button 
-        className={classNames({
+          className={classNames({
             [styles.filters__filter]: true,
             [styles['filters__filter--active']]: filter === option.id
           })} 
@@ -30,5 +30,5 @@ export default function Filters({ filter, setFilter }: FiltersProps) {
         </button>
       ))}
     </div>
-  )
+  );
 }
