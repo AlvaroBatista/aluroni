@@ -22,8 +22,7 @@
   ],
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "no-empty-function": "off",
-    "@typescript-eslint/no-empty-function": "error",
+    "@typescript-eslint/no-empty-function": "off",
     "indent": [
       "error",
       2
