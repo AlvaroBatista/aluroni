@@ -1,10 +1,10 @@
 import styles from './Menu.module.scss';
-import { ReactComponent as Logo } from 'assets/logo.svg';
 import SearchEngine from './SearchEngine';
 import { useState } from 'react';
 import Filters from './Filters';
 import Sort, { OptionsSort } from './Sort';
 import Itens from './Itens';
+import NavBar from 'components/NavBar';
 
 export default function Menu() {
   const [search, setSearch] = useState('');
@@ -13,9 +13,7 @@ export default function Menu() {
 
   return (
     <main>
-      <nav className={styles.menu}>
-        <Logo />
-      </nav>
+      <NavBar />
       <header className={styles.header}>
         <div className={styles.header__text}>
           A casa do código e da massa
