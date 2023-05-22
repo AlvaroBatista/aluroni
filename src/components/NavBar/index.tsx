@@ -15,11 +15,11 @@ export default function NavBar() {
   }];
 
   return (
-    <nav className={styles.menu}>
+    <nav className={styles.navBar}>
       <Logo />
-      <ul className={styles.menu__list}>
+      <ul className={styles.navBar__list}>
         {routes.map((route, index) => (
-          <li key={index} className={styles.menu__link}> 
+          <li key={index} className={styles.navBar__link}> 
             <Link to={route.to}>
               {route.label}
             </Link>
